@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CTFplayz</title>
+        <link rel="icon" href="{% static 'icon.jpg'%}" type="image/jpg" >
+        <link href="https://fonts.googleapis.com/css2?family=Nova+Round&display=swap" rel="stylesheet">
+        
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                font-family: roboto;
+            }
+            h1, h2, h3, h4, h5, h6{
+                font-family: 'Nova Round, cursive;
+            }
+            .wrap{
+                background: rgba(0,0,0,0.5) url(/static/bg-0112.jpg) no-repeat;
+                background-position: center;
+                background-size: cover;
+                min-height: 100vh;
+                overflow: -moz-hidden-unscrollable;
+                background-blend-mode: overlay;
+                            }
+            .wave{
+                position: absolute;
+                width: 100%;
+                bottom: -140px;
+                color: #fff;
+                opacity: 1;
+            }
+            header{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 25px 80px;
+                background: linear-gradient(to top, transparent, rgba(0,0,0,0,.6));
+            }
+            header .logo {
+                font-size: 56px;
+                font-weight: 700;
+                color: #fff;
+                float: left;
+            }
+            header .menu{
+                float:right;
+                margin-top: 5px;
+
+            }
+            header ul li{
+                display: inline-block;
+            }
+            header ul li a{
+                text-decoration: none;
+                font-size: 16px;
+                color: #fff;
+                margin: 0 25px;
+                font-weight: 300;
+                letter-spacing: 1px;
+            }
+
+            .content{
+                max-width: 55%;
+                padding: 200px 80px 0;
+                color: #fff;
+            }
+            .content h1{
+                font-size: 48px;
+            }
+            .content p{
+                font-size: 20px;
+                padding: 25px 0;
+                font-weight: 300;              
+            }
+            .content .btn-group{
+                margin-top: 45px;              
+            }
+            .content a{
+                display: inline-block;
+                padding: 15px 45px;
+                text-decoration: none;
+                color:#fff;
+                border-radius: 15px;
+            }
+            .content a.color1{
+                background-color: #0000FF;
+            }
+            .content a.color2{
+                background-color: #2C3539;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <header>
+                <img src="{% static 'icon.jpg' %}" alt="icon" width="60" height="60">
+                <div class="logo">CTFplayz </div>
+                
+        
+            </header>
+            <div class="content">
+                <h1>Are you Ready to Play Hacking Game</h1>
+                <p>Join us for playing and learning at the same time.</p>
+                <div class="btn-gr">
+                    <a href="login/" class="color1">Login</a>
+                    <a href="register/" class="color2">Register Now</a>
+                </div>
+            </div>
+            <!-- Blob -->
+            
+        </div>
+    </body>
+</html>

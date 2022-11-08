@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>
+        {% block title %}
+        {% endblock title %}| CTFplayz
+    </title>
+    {% block styles %}
+
+    {% endblock styles %}
+
+    
+    <style>
+        /*
+ * Main theme
+*/
+header {
+  min-height: 100px;
+}
+
+main {
+  min-height: 100vh;
+}
+
+footer {
+  min-height: 100px;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+.container-fluid .row {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.megamenu {
+  position: static;
+}
+.megamenu .dropdown-menu {
+  border: none;
+  width: 100%;
+}
+
+  #main {
+margin: 50px 0;
+}
+
+#main #faq .card {
+margin-bottom: 30px;
+border: 0;
+}
+
+#main #faq .card .card-header {
+border: 0;
+-webkit-box-shadow: 0 0 20px 0 rgba(213, 213, 213, 0.5);
+        box-shadow: 0 0 20px 0 rgba(213, 213, 213, 0.5);
+border-radius: 2px;
+padding: 0;
+}
+
+#main #faq .card .card-header .btn-header-link {
+color: #fff;
+display: block;
+text-align: left;
+background: #FFE472;
+color: #222;
+padding: 20px;
+}
+
+#main #faq .card .card-header .btn-header-link:after {
+content: "\f107";
+font-family: 'Font Awesome 5 Free';
+font-weight: 900;
+float: right;
+}
+
+#main #faq .card .card-header .btn-header-link.collapsed {
+background: #A541BB;
+color: #fff;
+}
+
+#main #faq .card .card-header .btn-header-link.collapsed:after {
+content: "\f106";
+}
+
+#main #faq .card .collapsing {
+background: #FFE472;
+line-height: 30px;
+}
+
+#main #faq .card .collapse {
+border: 0;
+}
+
+#main #faq .card .collapse.show {
+background: #FFE472;
+line-height: 30px;
+color: #222;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark badge-dark py-3 shadow-sm fixed-top">
+        <a href="#" class="navbar-brand font-weight-bold mr-auto " style="font-size: 2.2rem;">
+            &nbsp&nbsp&nbsp<img src="{% static 'icon.jpg' %}" alt="icon" class="ratio img-fluid rounded-circle-sm img-responsive " style="width: 53px;
+     height: 53px;
+     border-radius: 50%;">CTFPLAYz
+
+        </a>
+        <div id="navbarContent" class="collapse navbar-collapse order-sm-12 order-lg-1">
+          <ul class="navbar-nav ml-auto text-center ">
+            <!-- Megamenu-->
+            <li class="nav-item dropdown megamenu"><a id="megamenu" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle font-weight-bold text-uppercase">Challenges</a>
+              <div aria-labelledby="megamenu" class="dropdown-menu border-0 p-0 m-0">
+                <div class="container-fluid">
+                  <div class="row bg-dark text-light rounded-0 m-0 shadow-sm">
+                    <div class="col-12">
+                      <div class="p-7">
+                        <div class="row">
+                            <div class="col-sm-6 col-lg-1 mb-4" >
+                          </div>
+                          <div class="col-sm-6 col-lg-2 mb-4">
+                            <h6 class="font-weight-bold text-uppercase" style="color: white;"><a href="/cryptography"  >cRYPTOGRAPHY</a></h6>
+                          </div>
+                        
+                            <div class="col-sm-6 col-lg-2 mb-4">
+                            <h6 class="font-weight-bold text-uppercase"><a href="/reverse" >Reverse Engineering</a></h6>
+                            <ul class="list-unstyled">
+                          </div>
+                              <div class="col-sm-6 col-lg-2 mb-4">
+                            <h6 class="font-weight-bold text-uppercase"><a href="/forensic" >Forensic</a></h6>
+                            <ul class="list-unstyled">
+                          </div>
+                                <div class="col-sm-6 col-lg-2 mb-4">
+                            <h6 class="font-weight-bold text-uppercase"><a href="/web" >WEB</a></h6>
+                            <ul class="list-unstyled">
+                        </div>
+                        <div class="col-sm-6 col-lg-2 mb-4">
+                          <h6 class="font-weight-bold text-uppercase"><a href="/misc" >MISCELLANEOUS</a></h6>
+                          <ul class="list-unstyled">
+                        </div>
+                        
+                         
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item"><a href="/facts" class="nav-link font-weight-bold text-uppercase">FAQs</a></li>&nbsp&nbsp&nbsp
+            <li class="nav-item"><a href="/about" class="nav-link font-weight-bold text-uppercase">about</a></li>&nbsp&nbsp&nbsp
+            <li class="nav-item">
+                <a class="nav-link" href="/myprofile"> <img src="{% static 'pro.png' %}" alt="icon" class="ratio img-fluid rounded-circle-sm img-responsive " style="width: 43px;
+                    height: 39px;
+                    border-radius: 43%;"></a>
+              </li>&nbsp&nbsp&nbsp
+              <li class="nav-item">
+                <a class="nav-link font-weight-bold text-uppercase" href="/logout">LOGOUT</a>
+              </li>
+          </ul>
+        </div>  
+        <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler order-md-1">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+      </nav>
+      <br><br><br><br><br>
+      
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <script>
+              function toggleDropdown (e) {
+  const _d = $(e.target).closest('.dropdown'),
+    _m = $('.dropdown-menu', _d);
+  setTimeout(function(){
+    const shouldOpen = e.type !== 'click' && _d.is(':hover');
+    _m.toggleClass('show', shouldOpen);
+    _d.toggleClass('show', shouldOpen);
+    $('[data-toggle="dropdown"]', _d).attr('aria-expanded', shouldOpen);
+  }, e.type === 'mouseleave' ? 300 : 0);
+}
+
+$('body')
+  .on('mouseenter mouseleave','.dropdown',toggleDropdown)
+  .on('click', '.dropdown-menu a', toggleDropdown);
+      </script>
+
+    {% block body %}  {% endblock body %}
+      
+</body>
+</html>
