@@ -25,7 +25,7 @@ SECRET_KEY = 'mw51rd-1n2km@)q1)(zcqco@94$v5(0o@ifx69539*d%*gv!h_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True  
 
-ALLOWED_HOSTS = ['ctf-playz.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
