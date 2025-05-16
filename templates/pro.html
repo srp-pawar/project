@@ -1,0 +1,254 @@
+
+{% extends 'nav.html' %}
+{% load static %}
+{% block title%} Profile {% endblock title %}
+{% block style %}
+
+
+
+
+{% endblock %}
+
+{% block body %}
+<link href="{% static 'css/profileStyle.css' %}" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+<script src="{% static 'js/pro.js' %}"></script>
+<script type="text/javascript">
+  function checkSpcialChar(event){
+     if(!((event.keyCode >= 48) && (event.keyCode <= 57))){
+      event.returnValue = false;
+      return;
+     }
+     event.returnValue = true;
+  }
+ </script>
+ <script type = "text/javascript">
+  
+     function getConfirmation() {
+        var retVal = confirm("You can change your name only once do u want to change it ?");
+        if( retVal == true ) {
+           
+           return true;
+        } else {
+           
+           return false;
+        }
+     }
+  
+</script>
+ <script type="text/javascript">
+  function checkSpcialChar2(event){
+     if(!((event.keyCode >= 65) && (event.keyCode <= 90) || (event.keyCode >= 97) && (event.keyCode <= 122) || (event.keyCode >= 48) && (event.keyCode <= 57))){
+      event.returnValue = false;
+      return;
+     }
+     event.returnValue = true;
+  }
+ </script>
+
+<div class="container">
+      <div class="row">
+      <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+        <A href="#">Home</A>
+        <A "href="#">Logout</A>
+      </div>
+      <br>
+      <br>
+      <br><br><br>
+                <div class="row gutters-sm">
+                    <div class="col-md-4 mb-3">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex flex-column align-items-center text-center">
+                            <img src="{% static 'pro.png' %}" alt="Admin" class="rounded-circle" width="130">
+                            <div class="mt-3">
+                              <h4>{{user.username}}</h4>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+
+                      
+                      <div class="card mt-3">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe mr-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Website</h6>
+                            <span class="text-secondary">https://www.ctfplayz.com</span>
+                          </li>
+              
+                        </ul>
+                      </div>
+                  </div>
+
+
+
+                
+                <div class="col-md-8">
+                    <div class="card mb-3">
+                      <form action="" method="POST" >
+                        {% csrf_token %}
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <h6 class="mb-0">Full Name</h6>
+                            </div>
+                            {% if user.first_name %}
+                              {{user.first_name}}
+
+                            {% else %}
+                            <div class="col-sm-9 text-secondary">
+                              <input name="firstname" type="text"  placeholder="Full Name"
+                              minlength="7" maxlength="25" required="" style="background-color: rgba(250,250,250,0.3);" onkeypress="return checkSpcialChar2(event)">
+                       
+                            </div>
+                            {% endif %}
+                            
+                          </div>
+                          <hr>
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <h6 class="mb-0">Email</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                              {{user.email}}
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <h6 class="mb-0">Username</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                              {{user.username}}
+                            </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <h6 class="mb-0">Mobile</h6>
+                            </div>
+                            {% if user.last_name %}
+                              {{user.last_name}}
+                            {% else %}
+
+                            <div class="col-sm-9 text-secondary">
+                              
+                              <input name="mobile" type="tel"  placeholder="Valid-Mobile number"
+                                 minlength="10" maxlength="12" required="" style="background-color: rgba(250,250,250,0.3);" onkeypress="return checkSpcialChar(event)">
+                          
+                          </div>
+                            {% endif %}
+                          </div>
+                          <hr>
+                          <div class="row">
+                            {% if user.last_name %}
+                            <div class="col-sm-3"> 
+                              <button class="btn btn-primary" disabled >Edit Profile</button>                          
+                               </div>
+                            {% else %}
+                              <div class="col-sm-3"> 
+                              <button class="btn btn-primary" value=" submit" onclick = "getConfirmation();">Edit Profile</button>                          
+                               </div>
+                            {% endif %}   
+                          </div>
+                      </form>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+
+                    
+                    
+                      <div class="wrapper">
+                        <div class="card">
+                          <div class="circle">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                          </div>
+                          <div class="text">Cryptography</div>
+                        </div>
+                        <div class="card forensic">
+                          <div class="circle">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                          </div>
+                          <div class="text">forensic</div>
+                        </div>
+                        <div class="card miscellaneos">
+                          <div class="circle">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                          </div>
+                          <div class="text">MISCELLANEOUS</div>
+                        </div>
+                        <div class="card web">
+                          <div class="circle">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                          </div>
+                          <div class="text">web</div>
+                        </div>
+                        <div class="card Binary">
+                          <div class="circle">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                          </div>
+                          <div class="text">Binary</div>
+                        </div>
+                      </div>
+                    
+                      <script>
+                        let options = {
+                          startAngle: -1.55,
+                          size: 150,
+                          value: 0,
+                          fill: {gradient: ['#a445b2', '#fa4299']}
+                        }
+                        $(".circle .bar").circleProgress(options).on('circle-animation-progress',
+                        function(event, progress, stepValue){
+                          $(this).parent().find("span").text(String(stepValue.toFixed(2).substr(2)) + "%");
+                        });
+                        $(".Stegnography .bar").circleProgress({
+                          value: 0
+                        });
+                        $(".PWN .bar").circleProgress({
+                          value: 0
+                        });
+                        $(".AWM .bar").circleProgress({
+                          value: 0
+                        });
+                        $(".Binary .bar").circleProgress({
+                          value: 0
+                        });
+                      </script>
+                  
+                    
+
+
+
+    
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+
+    
+{% endblock body %}
+

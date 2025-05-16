@@ -1,0 +1,61 @@
+a,
+a:focus,
+a:hover {
+  color: rgb(31, 170, 50);
+}
+
+/* Custom default button */
+.btn-secondary{
+  background-color: greenyellow;
+  color:indigo;
+}
+.btn-secondary:hover{
+  background-color: blueviolet;
+}
+
+
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-image: linear-gradient(37deg,white,black );
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+.cover-container {
+  max-width: 60em ;
+}
+
+
+
+/*
+ * Cover
+ */
+.cover {
+  padding-top: 10.3rem;
+}
+.cover-heading{
+  font-weight: 800;
+  font-size: 2.8rem;
+  padding-bottom: 20px;
+}
+
+.cover .btn-lg {
+  margin-top: 4.0rem;
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+}
+.lead{
+  font-weight: 500;
+}

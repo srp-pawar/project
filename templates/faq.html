@@ -1,0 +1,154 @@
+{% extends 'nav.html' %}
+{% load static %}
+
+{% block title%} FAQs {% endblock title%}
+{% block style %} 
+<style>
+  body{
+background-image: linear-gradient(50deg,white,white,aqua);
+}
+</style>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> 
+
+{% endblock style %}
+
+{% block body%}
+
+<div id="main" style="background-image: linear-gradient(white,white,black);
+">
+    <div class="container">
+  <div class="accordion" id="faq">
+                      <div class="card">
+                          <div class="card-header"  id="faqhead1">
+                              <a href="#" class="btn btn-header-link" data-toggle="collapse" data-target="#faq1"
+                              aria-expanded="true" aria-controls="faq1">What is CTF?</a>
+                          </div>
+  
+                          <div id="faq1" class="collapse show" aria-labelledby="faqhead1" data-parent="#faq">
+                              <div class="card-body" style="background-image:linear-gradient(rgb(240, 216, 216),white);">
+                                <ul>
+                                  <li>CTF (Capture The Flag) is a kind of information security competition that challenges contestants to
+                                      solve a variety of tasks ranging from a scavenger hunt on wikipedia to basic programming exercises,
+                                      to
+                                      hacking your way into a server to steal data. In these challenges, the contestant is usually asked
+                                      to
+                                      find a specific piece of text that may be hidden on the server or behind a webpage. This goal is
+                                      called
+                                      the flag, hence the name!</li>
+                                  <li>Like many competitions, the skill level for CTFs varies between the events. Some are targeted
+                                      towards
+                                      professionals with experience operating on cyber security teams. These typically offer a large cash
+                                      reward and can be held at a specific physical location. Many challenges do not require programming
+                                      knowledge and are simply a matter of problem solving and creative thinking. Other events target the
+                                      high
+                                      school and college student range, sometimes offering monetary support for education to those that
+                                      place
+                                      highly in the competition!</li>
+                              </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card">
+                          <div class="card-header" id="faqhead2">
+                              <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq2"
+                              aria-expanded="true" aria-controls="faq2">Why to play CTF?</a>
+                          </div>
+  
+                          <div id="faq2" class="collapse" aria-labelledby="faqhead2" data-parent="#faq">
+                              <div class="card-body" style="background-image:linear-gradient(rgb(240, 216, 216),white);">
+                                <ul>
+                                  <li>CTFs are the best way to practice and enhance your information security skills, such as web
+                                      exploitation, reverse engineering, binary exploitation, forensics, and many more.</li>
+                                  <li>When you take part in CTF events and compete in groups, it helps you develop a team spirit.
+                                      Coordination
+                                      among team members is essential to achieve the target. It also provides you an opportunity to meet
+                                      like-minded people.</li>
+                                  <li>CTFs enable you to develop your problem solving and analytical skills to use in real-work scenarios.
+                                      CTF
+                                      tasks are usually based on real-world vulnerabilities and security incidents.</li>
+                                  <li>While playing CTF, you will learn how to handle pressure while honing your ethical hacking skills.
+                                      You
+                                      learn new creative ways to solve the problems.</li>
+                                  <li>CTFs events serve as an opportunity for the white hat hackers to evaluate their skills and get
+                                      recognition and also they get financial incentives, lucrative prizes to the winners.</li>
+                              </ul>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header" id="faqhead5">
+                            <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq5"
+                            aria-expanded="true" aria-controls="faq5">What are types of CTF events?</a>
+                        </div>
+
+                        <div id="faq5" class="collapse" aria-labelledby="faqhead5" data-parent="#faq">
+                            <div class="card-body" style="background-image:linear-gradient(rgb(240, 216, 216),white);">
+                              <ul>
+                                <li>Jeopardy-style CTF: In Jeopardy-style, there is either a test or many tasks you have to solve. You
+                                    need
+                                    to apply all the information security aptitudes you own to get a bit of encoded string. The next
+                                    challenges in the series will get unlocked only after the completion of previous ones.
+                                    Jeopardy-style
+                                    covers Web, Cryptography, Reverse designing, Pawning, Forensics, Steganography related challenges.
+                                </li>
+                                <li>Attack-Defense Style CTF: In Attack-Defense style CTF, two groups are competing with each other. In
+                                    this, you have to break into other group’s security posture to get the flag while protecting your
+                                    host
+                                    machine from the opponents. Before the contest starts, a definite time frame is given to both the
+                                    groups
+                                    to identify the vulnerabilities in their systems and fix them. The groups obtain points for
+                                    infiltration
+                                    as well as defending against the opponent’s attacks. It requires coordination among team members to
+                                    score maximum points. This type of event is also known as the Red Team/Blue Team CTF.</li>
+                                <li>Mixed Style CTFs: The mixed style is a blend of both the Jeopardy-style and the Attack-Defense style
+                                    CTFs. The organizers can set up an attack-defense competition having challenges of different kinds
+                                    or a
+                                    jeopardy competition having the attack-defense challenges.</li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="card">
+                          <div class="card-header" id="faqhead3">
+                              <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq3"
+                              aria-expanded="true" aria-controls="faq3">What are types of challenges in CTF?</a>
+                          </div>
+  
+                          <div id="faq3" class="collapse" aria-labelledby="faqhead3" data-parent="#faq">
+                              <div class="card-body" style="background-image:linear-gradient(rgb(240, 216, 216),white);">
+                                <ul>
+                                  <li>Cryptography - Typically involves decrypting or encrypting a piece of data.</li>
+                                  <li>Steganography - Tasked with finding information hidden in files or images.</li>
+                                  <li>Binary - Reverse engineering or exploiting a binary file.</li>
+                                  <li>Web - Exploiting web pages to find the flag.</li>
+                                  <li>Pwn - Exploiting a server to find the flag.</li>
+                              </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header" id="faqhead4">
+                            <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse" data-target="#faq4"
+                            aria-expanded="true" aria-controls="faq4">Which Tools I can use to get started?</a>
+                        </div>
+
+                        <div id="faq4" class="collapse" aria-labelledby="faqhead4" data-parent="#faq">
+                            <div class="card-body" style="background-image:linear-gradient(rgb(240, 216, 216),white);">
+                              <ul>
+                                <li>Binwalk - Analyze and extract files</li>
+                                <li>Burp suite - Feature packed web penetration testing framework</li>
+                                <li>Stegsolve - Pass various filters over images to look for hidden text</li>
+                                <li>GDB - Binary debugger</li>
+                                <li>PwnTools – a CTF framework and exploit development library used by Gallopsled in every CTF</li>
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+      </div>
+    </div>
+
+  
+
+{% endblock body%}
